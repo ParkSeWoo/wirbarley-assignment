@@ -3,4 +3,9 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = 'assignment'
+
+rootProject.name = 'exchange-rate'
+
+include 'exchange-rate-support'
+include 'exchange-rate-api'
+include 'exchange-rate-web'
