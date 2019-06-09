@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "rest.config",
+      "type": "com.wirbarley.assignment.support.config.RestTemplateConfig",
+      "sourceType": "com.wirbarley.assignment.support.config.RestTemplateConfig"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
