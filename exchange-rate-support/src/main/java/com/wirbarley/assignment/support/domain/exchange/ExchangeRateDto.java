@@ -1,5 +1,6 @@
-package com.wirbarley.assignment.support.model;
+package com.wirbarley.assignment.support.domain.exchange;
 
+import com.wirbarley.assignment.support.domain.AbstractDto;
 import lombok.*;
 
 @Getter

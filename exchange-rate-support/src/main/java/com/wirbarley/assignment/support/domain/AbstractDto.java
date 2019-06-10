@@ -1,4 +1,4 @@
-package com.wirbarley.assignment.support.model;
+package com.wirbarley.assignment.support.domain;
 
 import java.io.Serializable;
 

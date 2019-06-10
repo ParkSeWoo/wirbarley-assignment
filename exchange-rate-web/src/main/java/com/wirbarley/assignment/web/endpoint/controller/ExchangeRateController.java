@@ -22,9 +22,7 @@ public class ExchangeRateController
 	@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@RequestMapping("/currency")
 	public ResponseEntity<?> reqExchangeRate(@RequestParam String currency) {
-
 		return ResponseEntity.ok(
-				exchangeRateService.exchangeRateApiService(currency)
-		);
+				exchangeRateService.exchangeRateApiService(currency));
 	}
 }
