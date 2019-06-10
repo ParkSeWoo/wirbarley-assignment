@@ -6,5 +6,6 @@ coding test
 > - spring boot 2.1.5.RELEASE
 > - intelij 2019.01
 > - Gradle 3.2.1
-``` TEST
+``` 
+코딩테스트 과제 
 ```
