@@ -1,10 +1,15 @@
 package com.wirbarley.assignment.web.endpoint.service;
 
+import com.wirbarley.assignment.support.domain.exchange.CalculationDto;
+import com.wirbarley.assignment.support.domain.exchange.ExchangeRateDto;
 import com.wirbarley.assignment.support.property.ExchangeRateConfiguration;
+import com.wirbarley.assignment.support.util.UrlUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.math.BigDecimal;
 
 @Slf4j
 @Service
@@ -12,16 +17,19 @@ import org.springframework.web.client.RestTemplate;
 public class ExchangeRateService {
 	private final RestTemplate restTemplate;
 	private final ExchangeRateConfiguration exchangeRateConfiguration;
-	//private final String url = "http://www.apilayer.net/api/live?access_key=747b12b63088e23604e0bbfc13b58b6a";
 
-	public String exchangeRateApiService(String currency) {
-		String url =
-		exchangeRateConfiguration.getApiProtocol()+
-		exchangeRateConfiguration.getApiUrl()+
-		exchangeRateConfiguration.getPrivateKey();
+	public ExchangeRateDto exchangeRateApiService(String currency) {
 
-		String result = restTemplate.getForObject(url, String.class);
+		String exchangeRateApiUrl = UrlUtil.exchangeRateUrlPath(exchangeRateConfiguration, currency);
+		//log.info ("URL " + exchangeRateApiUrl);
+		ExchangeRateDto result = restTemplate.getForObject(exchangeRateApiUrl, ExchangeRateDto.class);
 
 		return result;
+	}
+
+	public BigDecimal amountReceivedApiService(CalculationDto calc) {
+		return exchangeRateApiService(
+				calc.getCurrency()).getQuotes().get("USD"+calc.getCurrency())
+				.multiply(new BigDecimal(calc.getPrice())) ;
 	}
 }
