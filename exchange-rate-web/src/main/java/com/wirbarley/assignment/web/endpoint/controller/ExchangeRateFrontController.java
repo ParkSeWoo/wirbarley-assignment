@@ -8,7 +8,6 @@ public class ExchangeRateFrontController {
 
 	@GetMapping("/")
 	public String home() {
-
 		return "index";
 	}
 }

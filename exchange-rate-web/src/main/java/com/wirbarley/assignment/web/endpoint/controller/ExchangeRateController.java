@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -26,12 +25,11 @@ public class ExchangeRateController
 				exchangeRateService.exchangeRateApiService(currency));
 	}
 
-
-	@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@PostMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@RequestMapping("/currency/calculation")
-	public ResponseEntity<?> reqAmountReceived(@Valid @ModelAttribute CalculationDto calu) {
+	public ResponseEntity<?> reqRemittanceAmount(@ModelAttribute @Valid CalculationDto calu) {
 		return ResponseEntity.ok(
-				exchangeRateService.amountReceivedApiService(calu));
+				exchangeRateService.remittanceAmountApiService(calu));
 	}
 
 }

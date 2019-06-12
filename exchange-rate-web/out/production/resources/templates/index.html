@@ -9,71 +9,58 @@
 <th:block th:replace="fragments/header"></th:block>
 
 <th:block layout:fragment="content">
- <h1 th:class="container">
+
     <div th:class="page-header">
         <h1>환율 계산</h1>
     </div>
-    <form th:class="form-signin">
-        <h1 th:class="form-signin-heading">송금국가 : 미국 (USD)</h1>
-        <h1 th:class="form-signin-heading">수취국가</h1>
-        <div class="row">
-            <div class="col-sm-4">
-                <select class="form-control" id="recipient-country">
-                    <option disabled selected>수취국가를 선택하세요</option>
-                    <option value="KRW">한국(KRW)</option>
-                    <option value="JPY">일본(JPN)</option>
-                    <option value="PHP">필리핀(PHP)</option>
-                </select>
-            </div>
-        </div>
-        <h1 th:class="form-signin-heading">환율 : <span id="exchange-rate"></span></h1>
-        <label for="currency" class="sr-only">송금액(USD)</label>
-        <input type="number" id="currency" max="1000" maxlength="4" class="form-control" style="width:30%" placeholder="송금액(USD)" th:required th:autofocus>
-        <br>
-        <div th:class="text-left">
-        <button type="button" th:class="btn-primary">Submit</button>
-        </div>
-        <br>
-        <h1 th:class="form-signin-heading">수취금액은 : <span id="amount-received"></span> 입니다.</h1>
-    </form>
+
+    <h4>
+     <form class="form-horizontal" role="form">
+         <div class="form-group">
+             <label for="text1" class="col-sm-2 control-label">송금국가 : </label>
+             <div id="text1">미국(USD)</div>
+         </div>
+         <div class="form-group">
+             <label for="recipient-country" class="col-sm-2 control-label">수취국가 : </label>
+             <div class="col-sm-6">
+                 <select class="form-control" id="recipient-country">
+                     <option disabled selected>수취국가를 선택하세요</option>
+                     <option value="KRW">한국(KRW)</option>
+                     <option value="JPY">일본(JPN)</option>
+                     <option value="PHP">필리핀(PHP)</option>
+                 </select>
+             </div>
+         </div>
+
+         <div class="form-group">
+             <label for="text2" class="col-sm-2 control-label">환율 : </label>
+             <div id="text2"><span id="exchange-rate"></span></div>
+         </div>
+
+         <div class="form-group">
+             <label for="remittance-amount" class="col-sm-2 control-label">송금액(USD)</label>
+             <div class="col-sm-6">
+                 <input type="number"
+                        class="form-control" id="remittance-amount" th:maxlength="5" max="10000" placeholder="송금액(USD)">
+             </div>
+         </div>
 
 
+         <div class="form-group">
+             <div class="col-sm-offset-2 col-sm-10">
+                 <button type="button" class="btn btn-default" id="submit">Submit</button>
+             </div>
+         </div>
 
- </div>
+         <div id="result_area" th:style="'border: 3px solid red;'" class="col-sm-8">
+             <h1 th:class="form-signin-heading">수취금액은 :
+                 <span id="amount-received"></span>
+                 <span id="currency"></span>입니다.</h1>
+         </div>
 
-<script>
+     </form>
+    </h4>
 
-$(document).ready(function() {
-    var url = "/v1/exchange-rate/currency?currency=";
-
-    $('#recipient-country').change(function () {
-        var currency = $(this).val();
-        $.ajax({
-            url: url + currency,
-            type:"GET",
-            success : function (data) {
-                var map = data.quotes;
-                $('#exchange-rate').text(numberWithCommas(resultMap(map,"USD"+currency)) + " " + currency + "/USD");
-            },
-            error : function (e) {
-                console.log(e.responseText);
-            }
-        });
-
-    });
-});
-
-var resultMap = function(map,k) {
-    return map[k];
-}
-
-var numberWithCommas = function(x) {
-    var y = Math.floor(x*100)/100;
-    return y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-
-</script>
 
 </th:block>
 

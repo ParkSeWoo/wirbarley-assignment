@@ -27,9 +27,10 @@ public class ExchangeRateService {
 		return result;
 	}
 
-	public BigDecimal amountReceivedApiService(CalculationDto calc) {
-		return exchangeRateApiService(
-				calc.getCurrency()).getQuotes().get("USD"+calc.getCurrency())
-				.multiply(new BigDecimal(calc.getPrice())) ;
+	public BigDecimal remittanceAmountApiService(CalculationDto calc) {
+		return exchangeRateApiService(calc.getCurrency())
+					.getQuotes()
+					.get("USD"+calc.getCurrency())
+					.multiply(new BigDecimal(calc.getPrice())) ;
 	}
 }
