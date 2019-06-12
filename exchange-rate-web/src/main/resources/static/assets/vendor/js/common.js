@@ -51,6 +51,7 @@ var resultMap = function(map,k) {
 
 var numberWithCommas = function(x) {
     var y = Math.floor(x*100)/100;
+    y = y.toFixed(2);
     return y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
