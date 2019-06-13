@@ -4,6 +4,11 @@ import com.wirbarley.assignment.support.property.ExchangeRateConfiguration;
 
 public class UrlUtil {
 
+	/**
+	 *
+	 * @param exchangeRateConfiguration
+	 * @return
+	 */
 	public static String exchangeRateUrlPath(ExchangeRateConfiguration exchangeRateConfiguration) {
 		String apiUrl =
 				exchangeRateConfiguration.getApiProtocol()+
@@ -12,6 +17,12 @@ public class UrlUtil {
 		return apiUrl;
 	}
 
+	/**
+	 *
+	 * @param exchangeRateConfiguration
+	 * @param currency
+	 * @return
+	 */
 	public static String exchangeRateUrlPath(ExchangeRateConfiguration exchangeRateConfiguration, String currency) {
 		String apiUrl =
 				exchangeRateConfiguration.getApiProtocol()+

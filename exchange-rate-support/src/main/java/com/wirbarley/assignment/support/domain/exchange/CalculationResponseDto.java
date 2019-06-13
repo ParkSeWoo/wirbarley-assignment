@@ -18,6 +18,6 @@ import java.util.Map;
 public class CalculationResponseDto implements DefaultDto {
 	private ResultCode success;
 	private String message;
-	private BigDecimal price;
+	private String price;
 	private String currencyType;
 }

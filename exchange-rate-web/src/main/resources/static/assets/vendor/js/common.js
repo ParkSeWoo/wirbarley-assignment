@@ -33,8 +33,8 @@ $(document).ready(function() {
             data:{"currency":currency,"price":price},
             success : function (data) {
                 $("#result_area").show();
-                $("#amount-received").text(numberWithCommas(data));
-                $("#currency").text(currency);
+                $("#amount-received").text(data.price);
+                $("#currency").text(data.currencyType);
             },
             error : function (e) {
                 console.log(e.responseText);

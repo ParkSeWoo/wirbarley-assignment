@@ -27,7 +27,8 @@ public class ExchangeRateController
 
 	@PostMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@RequestMapping("/currency/calculation")
-	public ResponseEntity<?> reqRemittanceAmount(@ModelAttribute @Valid CalculationRequestDto calu) {
+	public ResponseEntity<?> reqRemittanceAmount(@ModelAttribute @Valid CalculationRequestDto calu
+			) {
 		return ResponseEntity.ok(
 				exchangeRateService.remittanceAmountApiService(calu));
 	}
