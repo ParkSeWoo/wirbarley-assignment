@@ -23,5 +23,6 @@ public class CalculationRequestDto implements DefaultDto {
 
 	@Max(value = 10000, message = "최대 송금액은 10,000 USD 입니다.")
 	@Min(value = 1, message = "최소 송금액은 1 USD 입니다.")
+	@NotNull(message = "송금액은 필수 입니다.")
 	private BigDecimal price; //10000 USD 최대 확정금액 큰금액일 경우 BigDecimal
 }

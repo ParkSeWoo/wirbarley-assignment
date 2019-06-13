@@ -82,11 +82,11 @@ var validation = function(currency, price) {
 
     price = parseInt(price);
 
-    /*if (price <= 0 || price > 10000) {
+    if (price <= 0 || price > 10000) {
         alert("송금액(USD)이 바르지 않습니다.");
         $("#remittance-amount").focus();
         return false;
-    }*/
+    }
 
     return true;
 }

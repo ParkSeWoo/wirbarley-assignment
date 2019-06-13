@@ -20,5 +20,4 @@ public class ExchangeRateConstants {
 	@Value ("${exchange-rate.api-url}")
 	private String apiUrl;
 
-
 }
