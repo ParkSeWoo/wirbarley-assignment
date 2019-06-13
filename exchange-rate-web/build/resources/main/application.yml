@@ -8,11 +8,13 @@ spring:
     suffix: .html
     mode: HTML5
     cache: false
-    template-resolver-order: 0
 
 server:
   port: 8080
 
+exchange-rate:
+  key-access : 802846f83aba9e55d1914af6b2fba88e
+  api-url : http://www.apilayer.net/api/live
 
 
 

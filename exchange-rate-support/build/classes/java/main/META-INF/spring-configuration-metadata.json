@@ -1,11 +1,6 @@
 {
   "groups": [
     {
-      "name": "exchange-rate",
-      "type": "com.wirbarley.assignment.support.property.ExchangeRateConfiguration",
-      "sourceType": "com.wirbarley.assignment.support.property.ExchangeRateConfiguration"
-    },
-    {
       "name": "rest.config",
       "type": "com.wirbarley.assignment.support.config.RestTemplateConfig",
       "sourceType": "com.wirbarley.assignment.support.config.RestTemplateConfig"

@@ -5,6 +5,8 @@ $(document).ready(function() {
     $("#result_area").hide();
 
     $('#recipient-country').change(function () {
+        $("#remittance-amount").val("");
+
         var currency = $(this).val();
         $.ajax({
             url: rateUrl + currency,

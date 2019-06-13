@@ -5,7 +5,7 @@ coding test
 > - Open jdk 1.8
 > - spring boot 2.1.5.RELEASE
 > - intelij 2019.01
-> - Gradle 3.2.1
+> - Gradle 5.x
 ``` 
 코딩테스트 과제 
 ```

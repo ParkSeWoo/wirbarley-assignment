@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.wirbarley.assignment.web.endpoint.service.ExchangeRateServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-13T07:21:16" hostname="swui-MacBook-Pro.local" time="0.003">
-  <properties/>
-  <testcase name="remittanceAmountApiService" classname="com.wirbarley.assignment.web.endpoint.service.ExchangeRateServiceTest" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.wirbarley.assignment.support.util.FormatUtilTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-13T07:21:07" hostname="swui-MacBook-Pro.local" time="0.007">
+<testsuite name="com.wirbarley.assignment.support.util.FormatUtilTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-13T17:25:20" hostname="swui-MacBook-Pro.local" time="0.011">
   <properties/>
-  <testcase name="wirbarleyBigDicimalFormat" classname="com.wirbarley.assignment.support.util.FormatUtilTest" time="0.007"/>
+  <testcase name="wirbarleyBigDicimalFormat" classname="com.wirbarley.assignment.support.util.FormatUtilTest" time="0.011"/>
   <system-out><![CDATA[123,123.12
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
