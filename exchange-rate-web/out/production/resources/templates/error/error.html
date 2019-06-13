@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	  layout:decorator="layout/defaultLayout">
+<head>
+	<title>와이어바알리 코딩테스트</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+	<h1>잘못된 페이지 입니다. ^^</h1>
+	error code : <span th:text="${code}"></span>
+	<br>error msg : <span th:text="${message}"></span>
+	<br>timestamp : <span th:text="${timestamp}"></span>
+</div>
+
+
+<!-- 공통 footer -->
+<footer th:include="fragments/footer :: footer" th:remove="tag"></footer>
+<!-- //공통 footer -->
+
+</body>
+</html>

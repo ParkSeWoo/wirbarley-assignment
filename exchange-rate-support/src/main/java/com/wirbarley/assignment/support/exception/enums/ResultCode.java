@@ -1,7 +1,6 @@
-package com.wirbarley.assignment.web.exception.enums;
+package com.wirbarley.assignment.support.exception.enums;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public enum ResultCode {

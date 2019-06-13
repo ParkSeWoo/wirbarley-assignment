@@ -1,6 +1,7 @@
 package com.wirbarley.assignment.support.domain.exchange;
 
-import com.wirbarley.assignment.support.domain.AbstractDto;
+import com.wirbarley.assignment.support.domain.DefaultDto;
+import com.wirbarley.assignment.support.exception.enums.ResultCode;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -13,7 +14,8 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class ExchangeRateDto implements AbstractDto {
+public class ExchangeRateResponseDto implements DefaultDto {
+	private boolean success;
 	private String timestamp;
 	private String source;
 	private Map<String, BigDecimal> quotes;

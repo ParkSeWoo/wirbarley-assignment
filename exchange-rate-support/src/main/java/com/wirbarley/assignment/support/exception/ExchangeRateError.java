@@ -1,4 +1,4 @@
-package com.wirbarley.assignment.web.exception;
+package com.wirbarley.assignment.support.exception;
 
 import lombok.Getter;
 import lombok.Setter;

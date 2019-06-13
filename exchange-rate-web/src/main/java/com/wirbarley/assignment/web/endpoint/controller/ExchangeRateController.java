@@ -1,6 +1,6 @@
 package com.wirbarley.assignment.web.endpoint.controller;
 
-import com.wirbarley.assignment.support.domain.exchange.CalculationDto;
+import com.wirbarley.assignment.support.domain.exchange.CalculationRequestDto;
 import com.wirbarley.assignment.web.endpoint.service.ExchangeRateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +27,7 @@ public class ExchangeRateController
 
 	@PostMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@RequestMapping("/currency/calculation")
-	public ResponseEntity<?> reqRemittanceAmount(@ModelAttribute @Valid CalculationDto calu) {
+	public ResponseEntity<?> reqRemittanceAmount(@ModelAttribute @Valid CalculationRequestDto calu) {
 		return ResponseEntity.ok(
 				exchangeRateService.remittanceAmountApiService(calu));
 	}
