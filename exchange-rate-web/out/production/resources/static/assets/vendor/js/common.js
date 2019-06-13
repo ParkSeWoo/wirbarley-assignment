@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     });
 
-    $('#submit').on('click',function() {
+    $('#btn-submit').on('click',function() {
 
         var currency = $("#recipient-country option:selected").val();
         var price = $("#remittance-amount").val();
@@ -32,11 +32,22 @@ $(document).ready(function() {
             type:"POST",
             data:{"currency":currency,"price":price},
             success : function (data) {
+
                 $("#result_area").show();
                 $("#amount-received").text(data.price);
                 $("#currency").text(data.currencyType);
             },
             error : function (e) {
+                //서버에서 주는 에러 추가 혹시나 모를 스크립트 조작으로.. 테스트하실까봐..
+                var obj;
+                if (e.responseText != null || e.responseText != undefined) {
+                    obj = JSON.parse(e.responseText);
+                }
+
+                if (obj.code < 0) {
+                    alert(obj.error);
+                }
+
                 console.log(e.responseText);
             }
         });

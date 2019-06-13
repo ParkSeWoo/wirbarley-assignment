@@ -1,33 +1,29 @@
 package com.wirbarley.assignment.support.util;
 
-import com.wirbarley.assignment.support.property.ExchangeRateConfiguration;
+import com.wirbarley.assignment.support.property.ExchangeRateConstants;
 
 public class UrlUtil {
 
 	/**
 	 *
-	 * @param exchangeRateConfiguration
+	 * @param exchangeRateConstants
 	 * @return
 	 */
-	public static String exchangeRateUrlPath(ExchangeRateConfiguration exchangeRateConfiguration) {
-		String apiUrl =
-				exchangeRateConfiguration.getApiProtocol()+
-						exchangeRateConfiguration.getApiUrl()+"?access_key="+
-						exchangeRateConfiguration.getKey();
+	public static String exchangeRateUrlPath(ExchangeRateConstants exchangeRateConstants) {
+		String apiUrl = exchangeRateConstants.getApiUrl()+"?access_key="+
+						exchangeRateConstants.getKey();
 		return apiUrl;
 	}
 
 	/**
 	 *
-	 * @param exchangeRateConfiguration
+	 * @param exchangeRateConstants
 	 * @param currency
 	 * @return
 	 */
-	public static String exchangeRateUrlPath(ExchangeRateConfiguration exchangeRateConfiguration, String currency) {
-		String apiUrl =
-				exchangeRateConfiguration.getApiProtocol()+
-						exchangeRateConfiguration.getApiUrl()+"?access_key="+
-						exchangeRateConfiguration.getKey()+"&currencies="+currency;
+	public static String exchangeRateUrlPath(ExchangeRateConstants exchangeRateConstants, String currency) {
+		String apiUrl = exchangeRateConstants.getApiUrl()+"?access_key="+
+						exchangeRateConstants.getKey()+"&currencies="+currency;
 		return apiUrl;
 	}
 

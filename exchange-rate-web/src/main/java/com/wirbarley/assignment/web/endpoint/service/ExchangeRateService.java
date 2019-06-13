@@ -3,7 +3,7 @@ package com.wirbarley.assignment.web.endpoint.service;
 import com.wirbarley.assignment.support.domain.exchange.CalculationRequestDto;
 import com.wirbarley.assignment.support.domain.exchange.CalculationResponseDto;
 import com.wirbarley.assignment.support.domain.exchange.ExchangeRateResponseDto;
-import com.wirbarley.assignment.support.property.ExchangeRateConfiguration;
+import com.wirbarley.assignment.support.property.ExchangeRateConstants;
 import com.wirbarley.assignment.support.util.FormatUtil;
 import com.wirbarley.assignment.support.util.UrlUtil;
 import com.wirbarley.assignment.support.exception.enums.ResultCode;
@@ -17,10 +17,10 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class ExchangeRateService {
 	private final RestTemplate restTemplate;
-	private final ExchangeRateConfiguration exchangeRateConfiguration;
+	private final ExchangeRateConstants exchangeRateConstants;
 
 	public ExchangeRateResponseDto exchangeRateApiService(String currency) {
-		String exchangeRateApiUrl = UrlUtil.exchangeRateUrlPath(exchangeRateConfiguration, currency);
+		String exchangeRateApiUrl = UrlUtil.exchangeRateUrlPath(exchangeRateConstants, currency);
 		//log.info ("URL " + exchangeRateApiUrl);
 
 		ExchangeRateResponseDto result =
