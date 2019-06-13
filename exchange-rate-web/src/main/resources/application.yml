@@ -8,7 +8,6 @@ spring:
     suffix: .html
     mode: HTML5
     cache: false
-    template-resolver-order: 0
 
 server:
   port: 8080

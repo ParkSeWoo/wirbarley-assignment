@@ -1,0 +1,9 @@
+bootJar {
+    enabled = false
+    baseName = 'exchange-rate-support'
+    version = '0.0.1-SNAPSHOT'
+}
+
+jar {
+    enabled = true
+}
