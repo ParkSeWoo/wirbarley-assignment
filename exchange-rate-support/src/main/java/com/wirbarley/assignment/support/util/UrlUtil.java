@@ -16,7 +16,6 @@ public class UrlUtil {
 	 * @return
 	 */
 	public static String exchangeRateUrlPath(ExchangeRateConstants exchangeRateConstants) {
-
 		Stream<String> appendUrl =
 				Arrays.asList(exchangeRateConstants.getApiUrl()
 							  , "?access_key="

@@ -93,6 +93,15 @@ var validation = function(currency, price) {
     return true;
 }
 
+var captureReturnKey = function(event) {
+    document.addEventListener('keydown', function(event){
+        if(event.keyCode === 13) {
+            event.preventDefault();
+        }
+    },true);
+}
+
+
 
 
 
