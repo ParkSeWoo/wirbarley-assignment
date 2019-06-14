@@ -8,4 +8,7 @@ coding test
 > - Gradle 5.x
 ``` 
 코딩테스트 과제 
+
+테스트화면 
+http://localhost:8080/
 ```
