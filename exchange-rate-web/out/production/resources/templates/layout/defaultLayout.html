@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">Eblo</title>
-    <!-- 공통 css, js, meta tag -->
-    <th:block th:replace="fragments/header"></th:block>
+	<title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">Eblo</title>
+	<!-- 공통 css, js, meta tag -->
+	<th:block th:replace="fragments/header"></th:block>
 </head>
 <body>
-    <!-- page content body 구성 -->
-    <th:block layout:fragment="content"></th:block>
-    <!-- 공통 footer -->
-    <footer th:replace="fragments/footer :: footer"></footer>
-    <!-- 공통 javascript -->
-    <!--<th:block th:replace="fragments/script"></th:block>-->
-    <!-- page content javascript -->
-    <!--<th:block layout:fragment="pageScript"></th:block>-->
+<!-- page content body 구성 -->
+<th:block layout:fragment="content"></th:block>
+<!-- 공통 footer -->
+<footer th:replace="fragments/footer :: footer"></footer>
+<!-- 공통 javascript -->
+<!--<th:block th:replace="fragments/script"></th:block>-->
+<!-- page content javascript -->
+<!--<th:block layout:fragment="pageScript"></th:block>-->
 </body>
 </html>

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var rateUrl = "/v1/exchange-rate/currency?currency=";
     var calUrl = "/v1/exchange-rate/currency/calculation";
 
@@ -10,36 +10,36 @@ $(document).ready(function() {
         var currency = $(this).val();
         $.ajax({
             url: rateUrl + currency,
-            type:"GET",
-            success : function (data) {
+            type: "GET",
+            success: function (data) {
                 var map = data.quotes;
-                $('#exchange-rate').text(numberWithCommas(resultMap(map,"USD"+currency)) + " " + currency + "/USD");
+                $('#exchange-rate').text(numberWithCommas(resultMap(map, "USD" + currency)) + " " + currency + "/USD");
             },
-            error : function (e) {
+            error: function (e) {
                 console.log(e.responseText);
             }
         });
 
     });
 
-    $('#btn-submit').on('click',function() {
+    $('#btn-submit').on('click', function () {
 
         var currency = $("#recipient-country option:selected").val();
         var price = $("#remittance-amount").val();
 
-        if(!validation(currency, price)) return false;
+        if (!validation(currency, price)) return false;
 
         $.ajax({
             url: calUrl,
-            type:"POST",
-            data:{"currency":currency,"price":price},
-            success : function (data) {
+            type: "POST",
+            data: {"currency": currency, "price": price},
+            success: function (data) {
 
                 $("#result_area").show();
                 $("#amount-received").text(data.price);
                 $("#currency").text(data.currencyType);
             },
-            error : function (e) {
+            error: function (e) {
                 //서버에서 주는 에러 추가 혹시나 모를 스크립트 조작으로.. 테스트하실까봐..
                 var obj;
                 if (e.responseText != null || e.responseText != undefined) {
@@ -58,20 +58,20 @@ $(document).ready(function() {
 
 });
 
-var resultMap = function(map,k) {
+var resultMap = function (map, k) {
     return map[k];
 }
 
-var numberWithCommas = function(x) {
-    var y = Math.floor(x*100)/100;
+var numberWithCommas = function (x) {
+    var y = Math.floor(x * 100) / 100;
     y = y.toFixed(2);
     return y.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-var validation = function(currency, price) {
+var validation = function (currency, price) {
     var i = 0;
-    $('#recipient-country').each(function(index){
-        if($(this).val() == currency) {
+    $('#recipient-country').each(function (index) {
+        if ($(this).val() == currency) {
             i++;
         }
     });
@@ -93,12 +93,12 @@ var validation = function(currency, price) {
     return true;
 }
 
-var captureReturnKey = function(event) {
-    document.addEventListener('keydown', function(event){
-        if(event.keyCode === 13) {
+var captureReturnKey = function (event) {
+    document.addEventListener('keydown', function (event) {
+        if (event.keyCode === 13) {
             event.preventDefault();
         }
-    },true);
+    }, true);
 }
 
 
