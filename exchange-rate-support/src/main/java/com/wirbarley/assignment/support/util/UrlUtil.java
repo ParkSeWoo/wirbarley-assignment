@@ -1,7 +1,13 @@
 package com.wirbarley.assignment.support.util;
 
 import com.wirbarley.assignment.support.property.ExchangeRateConstants;
+import lombok.extern.slf4j.Slf4j;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+@Slf4j
 public class UrlUtil {
 
 	/**
@@ -10,9 +16,13 @@ public class UrlUtil {
 	 * @return
 	 */
 	public static String exchangeRateUrlPath(ExchangeRateConstants exchangeRateConstants) {
-		String apiUrl = exchangeRateConstants.getApiUrl()+"?access_key="+
-						exchangeRateConstants.getKey();
-		return apiUrl;
+
+		Stream<String> appendUrl =
+				Arrays.asList(exchangeRateConstants.getApiUrl()
+							  , "?access_key="
+							  , exchangeRateConstants.getKey()).stream();
+
+		return appendUrl.collect(Collectors.joining());
 	}
 
 	/**
@@ -22,9 +32,14 @@ public class UrlUtil {
 	 * @return
 	 */
 	public static String exchangeRateUrlPath(ExchangeRateConstants exchangeRateConstants, String currency) {
-		String apiUrl = exchangeRateConstants.getApiUrl()+"?access_key="+
-						exchangeRateConstants.getKey()+"&currencies="+currency;
-		return apiUrl;
+		Stream<String> appendUrl =
+				Arrays.asList(exchangeRateConstants.getApiUrl()
+							  , "?access_key="
+							  , exchangeRateConstants.getKey()
+							  , "&currencies="
+							  , currency).stream();
+
+		return appendUrl.collect(Collectors.joining());
 	}
 
 }
