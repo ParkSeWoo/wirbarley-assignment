@@ -35,21 +35,21 @@ public class ExchangeRateControllerTest {
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(exchangeRateController).build ();
+		mvc = MockMvcBuilders.standaloneSetup (exchangeRateController).build ();
 	}
 
 	@Test
 	public void reqRemittanceAmount() throws Exception {
 
 		final ResultActions actions =
-				mvc.perform(post("/v1/exchange-rate/currency/calculation")
-							.contentType(MediaType.APPLICATION_JSON_UTF8).param ("currency","KRW")
-							.param ("price","100")
-							//.content ("{\"currency\":\"KRW\",\"price\":100}")
-							).andDo(print());
+				mvc.perform (post ("/v1/exchange-rate/currency/calculation")
+						.contentType (MediaType.APPLICATION_JSON_UTF8)
+						.param ("currency", "KRW")
+						.param ("price", "100"))
+						.andDo (print ());
 
-		actions.andExpect(status().isOk())
-		;
+		actions.andExpect (status ().isOk ());
+
 
 	}
 }

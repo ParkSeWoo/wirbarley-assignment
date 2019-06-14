@@ -21,27 +21,19 @@ public class ExchangeRateService {
 
 	public ExchangeRateResponseDto exchangeRateApiService(String currency) {
 		String exchangeRateApiUrl = UrlUtil.exchangeRateUrlPath(exchangeRateConstants, currency);
-		//log.info ("URL " + exchangeRateApiUrl);
-
 		ExchangeRateResponseDto result =
 				restTemplate.getForObject(exchangeRateApiUrl, ExchangeRateResponseDto.class);
-
 		return result;
 	}
 
 	public CalculationResponseDto remittanceAmountApiService(CalculationRequestDto calc) {
 		return CalculationResponseDto.builder()
-				.price(
-						FormatUtil.wirbarleyBigDicimalFormat (
-							exchangeRateApiService(calc.getCurrency())
-						   .getQuotes()
-						   .get("USD"+calc.getCurrency())
-						   .multiply(calc.getPrice())
-						)
-				)
+				.price(FormatUtil.wirbarleyBigDicimalFormat (exchangeRateApiService(calc.getCurrency())
+						.getQuotes()
+						.get("USD"+calc.getCurrency())
+						.multiply(calc.getPrice())))
 				.success(ResultCode.SUCCESS)
 				.currencyType(calc.getCurrency())
-				.message("송금계산 결과")
-				.build();
+				.message("송금계산 결과").build();
 	}
 }

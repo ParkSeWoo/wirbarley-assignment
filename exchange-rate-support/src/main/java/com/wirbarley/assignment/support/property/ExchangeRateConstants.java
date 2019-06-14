@@ -15,9 +15,9 @@ import javax.validation.constraints.NotNull;
 @Setter
 public class ExchangeRateConstants {
 
-	@Value ("${exchange-rate.key-access}")
+	@Value("${exchange-rate.key-access}")
 	private String key;
-	@Value ("${exchange-rate.api-url}")
+	@Value("${exchange-rate.api-url}")
 	private String apiUrl;
 
 }

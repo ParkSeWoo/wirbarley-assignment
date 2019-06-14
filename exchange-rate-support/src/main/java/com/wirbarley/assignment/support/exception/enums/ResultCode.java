@@ -4,8 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum ResultCode {
-	SUCCESS(0, "seccess"),
-	FAIL(-1,"failed");
+	SUCCESS (0, "seccess"),
+	FAIL (-1, "failed");
 
 	int code;
 	String message;

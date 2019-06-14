@@ -13,6 +13,6 @@ public class FormatUtilTest {
 
 	@Test
 	public void wirbarleyBigDicimalFormat() {
-		System.out.println(FormatUtil.wirbarleyBigDicimalFormat(new BigDecimal ("123123.123")));
+		System.out.println (FormatUtil.wirbarleyBigDicimalFormat (new BigDecimal ("123123.123")));
 	}
 }

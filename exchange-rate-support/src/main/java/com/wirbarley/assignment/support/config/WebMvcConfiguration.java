@@ -11,9 +11,9 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/assets/**").addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS+"assets/").setCachePeriod(31536000);
-		registry.addResourceHandler("/vendor/**").addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS+"vendor/").setCachePeriod(31536000);
-		registry.addResourceHandler("/html/**").addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS+"html/").setCachePeriod(31536000);
+		registry.addResourceHandler ("/assets/**").addResourceLocations (CLASSPATH_RESOURCE_LOCATIONS + "assets/").setCachePeriod (31536000);
+		registry.addResourceHandler ("/vendor/**").addResourceLocations (CLASSPATH_RESOURCE_LOCATIONS + "vendor/").setCachePeriod (31536000);
+		registry.addResourceHandler ("/html/**").addResourceLocations (CLASSPATH_RESOURCE_LOCATIONS + "html/").setCachePeriod (31536000);
 	}
 
 }

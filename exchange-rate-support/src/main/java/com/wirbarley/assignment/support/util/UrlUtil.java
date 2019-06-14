@@ -11,34 +11,29 @@ import java.util.stream.Stream;
 public class UrlUtil {
 
 	/**
-	 *
 	 * @param exchangeRateConstants
 	 * @return
 	 */
 	public static String exchangeRateUrlPath(ExchangeRateConstants exchangeRateConstants) {
-		Stream<String> appendUrl =
-				Arrays.asList(exchangeRateConstants.getApiUrl()
-							  , "?access_key="
-							  , exchangeRateConstants.getKey()).stream();
-
-		return appendUrl.collect(Collectors.joining());
+		Stream<String> appendUrl = Arrays.asList (exchangeRateConstants.getApiUrl ()
+				, "?access_key="
+				, exchangeRateConstants.getKey ()).stream ();
+		return appendUrl.collect (Collectors.joining ());
 	}
 
 	/**
-	 *
 	 * @param exchangeRateConstants
 	 * @param currency
 	 * @return
 	 */
 	public static String exchangeRateUrlPath(ExchangeRateConstants exchangeRateConstants, String currency) {
 		Stream<String> appendUrl =
-				Arrays.asList(exchangeRateConstants.getApiUrl()
-							  , "?access_key="
-							  , exchangeRateConstants.getKey()
-							  , "&currencies="
-							  , currency).stream();
-
-		return appendUrl.collect(Collectors.joining());
+				Arrays.asList (exchangeRateConstants.getApiUrl ()
+						, "?access_key="
+						, exchangeRateConstants.getKey ()
+						, "&currencies="
+						, currency).stream ();
+		return appendUrl.collect (Collectors.joining ());
 	}
 
 }
